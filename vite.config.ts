@@ -1,11 +1,20 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 
+const { resolve } = require('path')
+
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), 'VITE_')
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: [
+      { find: '@', replacement: resolve(__dirname, 'src') },
+      { find: '@componets', replacement: '/src/components' },
+      { find: '@assets', replacement: '/src/assets' }
+    ]
+  },
   server: {
     port: 3000,
     proxy: {
