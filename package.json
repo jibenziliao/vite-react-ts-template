@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "yarn inject_variables vite",
-    "build": "tsc && yarn inject_variables && vite build",
-    "build:test": "tsc && yarn inject_variables vite build --mode staging && yarn run deletesourcemap",
+    "build": "yarn run release && git push --follow-tag && tsc && yarn inject_variables && vite build",
+    "build:test": "yarn run prerelease:beta && git push --follow-tag && tsc && yarn inject_variables vite build --mode staging && yarn run deletesourcemap",
     "serve": "vite preview",
     "release": "standard-version",
     "release:100": "yarn run standard-version --release-as major",
