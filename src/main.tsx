@@ -7,7 +7,7 @@ import { store } from './store'
 import './index.css'
 import App from './App'
 
-ReactDOM.render(    
+ReactDOM.render(
   <Provider store={store}>
     <ConfigProvider locale={locale}>
       <App />
