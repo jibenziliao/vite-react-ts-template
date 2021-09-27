@@ -13,7 +13,7 @@
     "prerelease:alpha": "yarn run standard-version --prerelease alpha",
     "prerelease:beta": "yarn run standard-version --prerelease beta",
     "prerelease:rc": "yarn run standard-version --prerelease rc",
-    "deletesourcemap": "cross-env-shell rm -rf build/assets/*.js.map",
+    "deletesourcemap": "cross-env-shell rm -rf dist/assets/*.js.map",
     "inject_variables": "cross-env VITE_PROJECT_NAME=$npm_package_name VITE_SENTRY_RELEASE=$npm_package_version"
   },
   "dependencies": {
