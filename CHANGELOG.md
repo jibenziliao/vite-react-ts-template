@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/jibenziliao/vite-react-ts-template/compare/v0.1.0...v0.1.1) (2021-09-27)
+
+
+### Features
+
+* **alias:** config alias ([512d707](https://github.com/jibenziliao/vite-react-ts-template/commit/512d7073653d76cfa7edc7cf7693376e01e47f99))
+
 ## 0.1.0 (2021-09-27)
 
 
