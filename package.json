@@ -1,10 +1,20 @@
 {
   "name": "vite-react-ts-template",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "serve": "vite preview"
+    "dev": "yarn inject_variables vite",
+    "build": "tsc && yarn inject_variables && vite build",
+    "build:test": "tsc && yarn inject_variables vite build --mode staging && yarn run deletesourcemap",
+    "serve": "vite preview",
+    "release": "standard-version",
+    "release:100": "yarn run standard-version --release-as major",
+    "release:010": "yarn run standard-version --release-as minor",
+    "release:001": "yarn run standard-version --release-as patch",
+    "prerelease:alpha": "yarn run standard-version --prerelease alpha",
+    "prerelease:beta": "yarn run standard-version --prerelease beta",
+    "prerelease:rc": "yarn run standard-version --prerelease rc",
+    "deletesourcemap": "cross-env-shell rm -rf build/assets/*.js.map",
+    "inject_variables": "cross-env VITE_PROJECT_NAME=$npm_package_name VITE_SENTRY_RELEASE=$npm_package_version"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
@@ -13,11 +23,13 @@
     "await-to-js": "^3.0.0",
     "axios": "^0.21.4",
     "classnames": "^2.3.1",
+    "cross-env": "^7.0.3",
     "qs": "^6.10.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-redux": "^7.2.5",
-    "react-router-dom": "^5.3.0"
+    "react-router-dom": "^5.3.0",
+    "store2": "^2.12.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
